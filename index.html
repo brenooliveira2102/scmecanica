@@ -33,6 +33,7 @@
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #111111;
+            overflow-x: hidden; /* Garante que o body não crie rolagem */
         }
         .font-bebas {
             font-family: 'Bebas Neue', sans-serif;
@@ -63,7 +64,7 @@
         }
     </style>
 </head>
-<body class="bg-[#111111] text-white overflow-x-hidden">
+<body class="bg-[#111111] text-white">
 
     <!-- ===== Header ===== -->
     <header id="header" class="py-3 sticky top-0 z-50 transition-colors duration-300">
@@ -95,7 +96,7 @@
         </div>
     </header>
 
-    <main class="-mt-[80px]">
+    <main class="-mt-[80px] overflow-hidden">
         <!-- ===== Hero Section ===== -->
         <section id="hero" class="relative h-screen min-h-[600px] flex items-center text-center bg-cover bg-center bg-no-repeat pt-[80px]" style="background-image: url('Frente.webp');">
             <div class="absolute inset-0 bg-black/60"></div>
@@ -307,7 +308,7 @@
                 setHeaderAppearance();
             });
 
-            document.querySelectorAll('.nav-link-mobile, a.nav-link[href^="#"]').forEach(link => {
+            document.querySelectorAll('.nav-link-mobile, a.nav-link').forEach(link => {
                 link.addEventListener('click', (e) => {
                     const isMobileLink = link.classList.contains('nav-link-mobile');
                     if (isMobileLink) {
